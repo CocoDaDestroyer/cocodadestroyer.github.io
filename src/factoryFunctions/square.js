@@ -1,4 +1,4 @@
-import {ship} from "./ship"
+import ship from "./ship"
 const square = (coordArr)=>{
     const coords =coordArr
     var shipType = null

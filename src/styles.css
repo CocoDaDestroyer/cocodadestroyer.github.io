@@ -1,0 +1,49 @@
+td{
+    height:5vh;
+    width: 5vh;
+    border:.25vh solid black;
+    border-style: inset;
+    padding: 0;
+    margin: 0;
+}
+h1{
+    color:black;
+    text-align: center;
+    font-size: 6vh;
+}
+h3{
+    font-size: 3vh;
+}
+.tile{
+    background-color:whitesmoke;
+}
+
+table{
+    text-align: center;
+    font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+button{
+    width:10vh;
+    height:4vh;
+    margin-bottom: 5vh;
+    background-color: gray;
+    border-radius: 10%;
+    font-size: 2vh;
+    color:white
+}
+body{
+    text-align: center;
+    background-color: whitesmoke;
+}
+#placementTable{
+    margin-top: 8vh;
+}
+.hovered{
+    background-color: green;
+}
+.shiptile{
+    background-color: blue;
+}
