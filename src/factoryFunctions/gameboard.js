@@ -20,16 +20,15 @@ const gameBoard = () => {
             Cruiser:3,
             PatrolBoat:2
         }
-        let place =10-shipLengths[type]+1
     
         if ((direction === 'Horizontal'&&coordArr[1] + shipLengths[type]-1 < 10&& coordArr[0] < 10)||(direction === 'Vertical' && coordArr[1]<10 && coordArr[0] + shipLengths[type]-1<10)) {
             const newShip = ship(type);
             const length = newShip.length;
             shipDict[type] = newShip;
     
-            if (direction === "Vertical") {
+            if (direction === "Horizontal") {
                 for (let i = 0; i < length; i++) {
-                    const index = coordArr[0]+coordArr[1]*10;
+                    const index = (coordArr[1]+i)*10+coordArr[0];
                     const shipSquare = squareList[index];
                     if(shipSquare.getShip() ===null){
                         shipSquare.addShip(newShip);
@@ -37,9 +36,8 @@ const gameBoard = () => {
                         return false
                     }
                 }
-            } else if (direction === "Horizontal") {
+            } else if (direction === "Vertical") {
                 for (let i = 0; i < length; i++) {
-                    console.log(coordArr)
                     const index = coordArr[1]*10+coordArr[0]+i;
                     const shipSquare = squareList[index];
                     if(shipSquare.getShip() ===null){
