@@ -63,13 +63,14 @@ const gameBoard = () => {
     };
 
     const receiveAttack = coordArr => {
+
         const index = coordArr[0] + coordArr[1] * 10;
         const attackedSquare = squareList[index];
         const status = attackedSquare.getCheckStatus();
         if (status === null) {
             attackedSquare.check()
         } else {
-            return status;
+            return false;
         }
     };
 

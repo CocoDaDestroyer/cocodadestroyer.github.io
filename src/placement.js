@@ -6,8 +6,8 @@ const placementTable = () =>{
         const tableRow = document.createElement('tr');
         for(let z =0;z<10;z++){
             let tableCell = document.createElement('td');
-            tableCell.textContent =`${z},${i}`
             tableCell.setAttribute('class','tile');
+            tableCell.classList.add('place')
             tableRow.appendChild(tableCell);
             tableCell.dataset.coordArray = `${z},${i}`;
         }

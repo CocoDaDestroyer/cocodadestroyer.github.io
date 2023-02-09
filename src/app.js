@@ -6,7 +6,7 @@ import rotate from "./rotate";
 import direction from "./factoryFunctions/direction";
 const appController = (function(){
     placementTable()
-    const board = gameBoard()
+    const playerBoard = gameBoard()
     const ships = [
         'Carrier',
         'Battleship',
@@ -14,6 +14,6 @@ const appController = (function(){
         'Cruiser',
         'PatrolBoat']
     const way = direction()
-    placeShips(way,board,ships)
+    placeShips(way,playerBoard,ships)
     rotate(way,ships)
 }) ();

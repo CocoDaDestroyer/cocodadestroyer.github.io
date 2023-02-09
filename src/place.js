@@ -1,5 +1,6 @@
 import highlights from "./highlight"
 import showTilesWithShips from "./showTilesWShips"
+import startGame from "./startGame"
 const placeShips = (direction,board,list) =>{
     console.log('hi')
     const shipLengths = {
@@ -11,7 +12,7 @@ const placeShips = (direction,board,list) =>{
     }
     
     highlights(shipLengths[list[0]],direction.obtainDirection())
-    const tiles = document.querySelectorAll('td')
+    const tiles = document.querySelectorAll('.place')
     tiles.forEach((tile)=>{
         tile.addEventListener('click',function(){
             let coords = tile.dataset.coordArray.split(',').map(Number);
@@ -21,7 +22,10 @@ const placeShips = (direction,board,list) =>{
                 list.shift()
                 console.log(direction.obtainDirection())
                 highlights(shipLengths[list[0]],direction.obtainDirection())
-                showTilesWithShips(board)
+                showTilesWithShips(board,'.place','coordArray')
+                if(list.length === 0){
+                    startGame(board)
+                }
 
             }
         })
